@@ -61,6 +61,10 @@ bash organize_samples.sh
 **Inputs:** MEX files.
 **Tools:** `Scanpy`, `Scrublet`
 **Outputs:** Scrublet scores.
+**Script:**
+```python
+python3 rna0_load_and_detectDoublets.py
+```
 
 ---
 
@@ -69,5 +73,34 @@ bash organize_samples.sh
 **Purpose:** Creates an Anndata object to be used in python. Calculates the cell cycle scores.
 **Tools:** `Scanpy`, `anndata`, `numpy`
 **Inputs:** MEX files.
-**Outputs:** Anndata object.
+**Outputs:** Answers to q1 and q2, and Anndata object.
+**Script:**
+```python
+python3 rna1_doubletAndCellCycle.py
+```
 
+---
+
+### Step 3 – identification of *T. gondii* counts and infected cells
+
+**Purpose:** Defines the maximum % of *T. gondii* counts expected by chance and flags infected cells.
+**Tools:** `Scanpy`, `anndata`, `numpy`, `scipy`, `pandas`
+**Inputs:** Anndata object.
+**Outputs:** Answers to q3 and q4, and Anndata object.
+**Script:**
+```python
+rna2_Tg_identification.ipynb
+```
+
+---
+
+### Step 4 – preprocessing and cell filtering of dataset.
+
+**Purpose:** Preprocesses the data by filtering low quality cells.
+**Tools:** `Scanpy`, `anndata`, `numpy`, `scipy`, `pandas`
+**Inputs:** Anndata object.
+**Outputs:** Answer to q5, and Anndata object.
+**Script:**
+```python
+rna3_preprocessing.ipynb
+```
