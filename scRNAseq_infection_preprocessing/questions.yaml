@@ -1,0 +1,33 @@
+task: >
+  Preprocess scRNA-seq data from placental tissue infected with *T. gondii* at 24 hours post-infection.
+  Using the provided single-cell data generated using 10x Genomics protocols answer the following.
+
+questions:
+  - id: q1
+    stage: doublet detection
+    text: |
+      What is the number of cells detected as doublets using scrublet?
+    answer_type: integer_exact
+    tolerance: 50
+  - id: q2
+    stage: calculation of cell cycle scores
+    text: |
+      How many cells are cycling cells?
+    answer_type: integer_exact
+    tolerance: 50
+  - id: q3
+    stage: Parasite count detection
+    text: |
+      What is the maximum percentage of T. gondii reads expected by chance in uninfected samples?
+    answer_type: numeric_percent
+  - id: q4
+    stage: Parasite count quantification
+    text: |
+      What are the top 5 most expressed T. gondii genes across cells flagged as infected?
+    answer_type: string_exact
+  - id: q5
+    stage: cell filtering
+    text: |
+      What is the threshold percentage of mitochondrial counts used to retain cells?
+    answer_type: numeric_percent
+    tolerance: 10

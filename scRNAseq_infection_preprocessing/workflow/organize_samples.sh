@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate into the data directory
-cd data || exit 1
+cd ../data || exit 1
 
 # Loop through all matching barcode files
 for file in Pla_*_barcodes.tsv.gz; do

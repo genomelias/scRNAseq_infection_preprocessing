@@ -1,0 +1,31 @@
+paper_title: Acute response to pathogens in the early human placenta at single-cell resolution
+doi: https://doi.org/10.1016/j.cels.2024.04.002
+
+data_source:
+  Data_ID: "ArrayExpress: E-MTAB-12795"
+  Data_URL: "https://www.ebi.ac.uk/biostudies/ArrayExpress/studies/E-MTAB-12795?query=E-MTAB-12795"
+  Samples:
+      - Pla_HDBR13007974
+      - Pla_HDBR13007975
+      - Pla_HDBR13798223
+      - Pla_HDBR13798224
+  size: 2 GB
+  cell_count: 67814
+
+domain: scrna_seq
+
+ref_genome:
+  Homo_sapiens: GRCh38 (ver. 2020-A, CellRanger)
+  Toxoplasma_gondii: GCA_000149715.2
+
+tools: [Scanpy 1.7.1, Scrublet 0.2.2, anndata 0.7.5, numpy 2.7.3, scipy 1.6.1, pandas 1.2.3]
+
+analysis_pipeline:
+  data_organiser: organize_samples.sh
+  load_doubletScore: rna0_load_and_detectDoublets.py
+  cell_cylce: rna1_doubletAndCellCycle.py
+  tg_identification: rna2_Tg_identification.ipynb
+  preprocessing: rna3_preprocessing.ipynb
+
+
+estimated_runtime_minutes: 20
